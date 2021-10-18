@@ -6,6 +6,8 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import { NotFound } from 'http-errors';
 import Services from './Pages/Service/Services';
+import About from './Pages/About/About';
+import Doctors from './Pages/Doctor/Doctors';
 
 
 
@@ -23,6 +25,12 @@ function App() {
             </Route>
             <Route path="/Service">
               <Services></Services>
+            </Route>
+            <Route path="/Doctors">
+              <Doctors></Doctors>
+            </Route>
+            <Route path="/About">
+              <About></About>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

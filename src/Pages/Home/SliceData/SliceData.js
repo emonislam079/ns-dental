@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 const SliceData = (props) => {
-    const {name, details, cost, img}=props.service
+    const {name, details, img}=props.service
     return (
         <div>
             <Col>

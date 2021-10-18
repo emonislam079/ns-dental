@@ -11,7 +11,7 @@ const SliceDatas = () => {
     }, []);
     return (
             <div className="my-5">
-                <h1 className="mt-5" >OUR SERVICES</h1>
+                <h1 className="mt-5 text-center">OUR SERVICES</h1>
              <div className="container mt-5">
             <Row xs={1} md={3} className="g-4 container">
             {
