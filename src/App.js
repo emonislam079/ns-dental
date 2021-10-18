@@ -5,6 +5,7 @@ import Header from './Pages/Shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import { NotFound } from 'http-errors';
+import Services from './Pages/Service/Services';
 
 
 
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/Service">
+              <Services></Services>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
