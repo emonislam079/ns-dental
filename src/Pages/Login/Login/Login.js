@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import useAuth from '../../../Hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
     const [name, setName] = useState('');
@@ -85,8 +86,16 @@ const Login = () => {
         console.log(result);
       })
   }
+  const history= useHistory();
+  const location= useLocation();
 
-//   }
+  const handleGoogleLogIn = () =>{
+    signInUsingGoogle()
+    .then(result =>{
+      history.push(location.state?.from||'/home');
+    })
+  }
+
     return (
         <div className="mx-auto mt-5 p-3 text-start w-50 border border-secondary">
       <form onSubmit={handleRegistration}>
@@ -126,7 +135,7 @@ const Login = () => {
       </form>
       <h1>-------------or--------------</h1>
       <div className="align-center">
-      <button onClick={signInUsingGoogle} className="btn btn-primary">Google Sign In</button>
+      <button onClick={handleGoogleLogIn} className="btn btn-primary">Google Sign In</button>
     </div>
     </div>
     //     
