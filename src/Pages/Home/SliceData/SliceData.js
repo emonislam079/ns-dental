@@ -1,8 +1,10 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 const SliceData = (props) => {
-    const {name, details, img}=props.service
+    const {name, details, img, id}=props.service
     return (
         <div>
             <Col>
@@ -13,7 +15,9 @@ const SliceData = (props) => {
           <Card.Text className="my-3">
             {details}
             <br />
-            <button className="btn btn-primary">Details</button>
+            <Link to={`/SingelService/${id}`}>
+                <button className="btn btn-primary">Book {name}</button>
+            </Link>
           </Card.Text>
         </Card.Body>
       </Card>

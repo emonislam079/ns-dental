@@ -8,12 +8,18 @@ import { NotFound } from 'http-errors';
 import Services from './Pages/Service/Services';
 import About from './Pages/About/About';
 import Doctors from './Pages/Doctor/Doctors';
+import Appoinment from './Pages/Appoinment/Appoinment';
+import SingelService from './Pages/Service/SingelService';
+import AuthProvider from './Contex/AuthProvider';
+import Login from './Pages/Login/Login/Login';
+
 
 
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <Router>
           <Header></Header>
           <Switch>
@@ -32,12 +38,22 @@ function App() {
             <Route path="/About">
               <About></About>
             </Route>
+            <Route path="/SingelService/:ServiceId">
+              <SingelService></SingelService>
+            </Route>
+            <Route path="/Appointment">
+              <Appoinment></Appoinment>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
             </Switch>
             <Footer></Footer>
             </Router>
+            </AuthProvider>
       
     </div>
   );

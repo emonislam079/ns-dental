@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const DoctorData = (props) => {
     const {name, age, qualification, img, experience}=props.doctor
@@ -14,7 +15,9 @@ const DoctorData = (props) => {
             {qualification}
             <h5 className="my-3">Age:{age}</h5>
             <h5 className="my-3">Experiance:{experience}</h5>
-            <button className="btn btn-primary">Booking Appointment</button>
+            <Link to={`/Appointment`}>
+                <button className="btn btn-primary">Book {name}</button>
+            </Link>
           </Card.Text>
         </Card.Body>
       </Card>
