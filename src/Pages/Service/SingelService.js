@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import Service from './Service';
+
 
 const SingelService = () => {
     const { ServiceId } = useParams();
@@ -17,6 +17,7 @@ const SingelService = () => {
             <h1>{Details.name}</h1>
             <img src={Details.img} alt="" />
             <p>{Details.details}</p>
+   
             </div>
              
     
