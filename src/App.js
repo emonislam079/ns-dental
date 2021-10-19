@@ -12,6 +12,7 @@ import Appoinment from './Pages/Appoinment/Appoinment';
 import SingelService from './Pages/Service/SingelService';
 import AuthProvider from './Contex/AuthProvider';
 import Login from './Pages/Login/Login/Login';
+import PrivateRoute from './Pages/Login/PrivetRoute/PrivateRoute';
 
 
 
@@ -29,21 +30,21 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/Service">
+            <PrivateRoute path="/Service">
               <Services></Services>
-            </Route>
-            <Route path="/Doctors">
+            </PrivateRoute>
+            <PrivateRoute path="/Doctors">
               <Doctors></Doctors>
-            </Route>
+            </PrivateRoute>
             <Route path="/About">
               <About></About>
             </Route>
-            <Route path="/SingelService/:ServiceId">
+            <PrivateRoute path="/SingelService/:ServiceId">
               <SingelService></SingelService>
-            </Route>
-            <Route path="/Appointment">
+            </PrivateRoute>
+            <PrivateRoute path="/Appointment">
               <Appoinment></Appoinment>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>

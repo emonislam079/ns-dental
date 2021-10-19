@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 
 const Appoinment = () => {
+  const [date, setDate] = useState(new Date());
+
+  console.log("DATE", date);
     return (
         <div className="mt-5 pt-3 container text-start">
             <h1>Book Your Visit At <span className='text-primary'>N.S Dental Care</span></h1>
@@ -27,10 +30,21 @@ const Appoinment = () => {
       <Form.Control type="number" placeholder="Enter your number" />
     </Form.Group>
   </Row>
+  <Form.Group className="mb-3" controlId="duedate">
+  <Form.Label className="mb-3">Appointment Date</Form.Label>
+              <Form.Control
+                type="date"
+                name="duedate"
+                placeholder="Due date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </Form.Group>
   <Form.Group className="mb-3" controlId="formGridAddress2">
     <Form.Label>Address</Form.Label>
     <Form.Control placeholder="Apartment, studio, or floor" />
   </Form.Group>
+  
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label>City</Form.Label>
