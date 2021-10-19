@@ -12,10 +12,14 @@ const SingelService = () => {
     }, []);
     
     return (
-        <div className='mt-5 pt-5'>
+        <div className='mt-5 pt-5 container'>
+            
+            <h1>{Details.name}</h1>
             <img src={Details.img} alt="" />
-             <h1>{ServiceId}</h1>
-        </div>
+            <p>{Details.details}</p>
+            </div>
+             
+    
     );
 };
 

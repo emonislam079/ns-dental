@@ -16,7 +16,7 @@ const SliceData = (props) => {
             {details}
             <br />
             <Link to={`/SingelService/${id}`}>
-                <button className="btn btn-primary">Book {name}</button>
+                <button className="btn btn-primary">Details {name}</button>
             </Link>
           </Card.Text>
         </Card.Body>
