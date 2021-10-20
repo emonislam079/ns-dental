@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <div className="container mt-5 pt-3 text-start">
+            <div className="container mt-5 pt-3 text-start shadow p-3 mb-5 bg-body rounded">
                 <h3 className="text-primary my-3">ADVANCED DENTAL TECHNOLOGY</h3>
                 <p>At TruYou Dental, we strive to provide the best technology for convenient, effective dentistry. Our team stays up-to-date on the latest technology and incorporates proven methods that can help our dental care to be more precise, accurate and comfortable.</p>
                 <h3 className="text-primary my-3">DIGITAL SMILE DESIGN</h3>

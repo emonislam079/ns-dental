@@ -6,10 +6,10 @@ const Appoinment = () => {
 
   console.log("DATE", date);
     return (
-        <div className="mt-5 pt-3 container text-start">
-            <h1>Book Your Visit At <span className='text-primary'>N.S Dental Care</span></h1>
+        <div className="mt-5 pt-3 mb-4 container text-start shadow p-3 mb-5 bg-body rounded">
+            <h1 className= "mb-4">Book Your Visit At <span className='text-primary'>N.S Dental Care</span></h1>
             <div> 
-            <Form>
+            <Form className="p-5">
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>First Name</Form.Label>

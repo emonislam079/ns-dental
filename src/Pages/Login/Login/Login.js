@@ -42,6 +42,7 @@ const Login = () => {
 
     if (isLogin) {
       processLogin(email, password);
+      
     }
     else {
       registerNewUser(email, password);
@@ -54,21 +55,8 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        history.push(location.state?.from||'/home');
         setError('');
-      })
-      .catch(error => {
-        setError(error.message);
-      })
-  }
-
-  const registerNewUser = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(result => {
-        const user = result.user;
-        console.log(user);
-        setError('');
-        verifyEmail();
-        setUserName();
       })
       .catch(error => {
         setError(error.message);
@@ -80,6 +68,24 @@ const Login = () => {
       .then(result => { })
   }
 
+  const registerNewUser = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        history.push(location.state?.from||'/home');
+        setError('');
+        verifyEmail();
+        setUserName();
+        setName('');
+        setEmail('');
+        setPassword('')
+      })
+      .catch(error => {
+        setError(error.message);
+      })
+  }
+ 
   const verifyEmail = () => {
     sendEmailVerification(auth.currentUser)
       .then(result => {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const DoctorData = (props) => {
     const {name, age, qualification, img, experience}=props.doctor
     return (
-        <div className="align-content-center">
+        <div className="align-content-center shadow p-3 mb-5 bg-body rounded">
            <Col>
       <Card>
         <Card.Img variant="top" src={img} width="150px" height="200px" />

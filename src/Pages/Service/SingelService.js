@@ -12,7 +12,7 @@ const SingelService = () => {
     }, []);
     
     return (
-        <div className='mt-5 pt-5 container'>
+        <div className='mt-5 pt-5 container shadow p-3 mb-5 bg-body rounded'>
             
             <h1>{Details.name}</h1>
             <img src={Details.img} alt="" />
