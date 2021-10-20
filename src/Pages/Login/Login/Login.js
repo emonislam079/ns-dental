@@ -31,6 +31,7 @@ const Login = () => {
   const handleRegistration = e => {
     e.preventDefault();
     console.log(email, password);
+    
     if (password.length < 6) {
       setError('Password Must be at least 6 characters long.')
       return;
@@ -55,7 +56,7 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
-        history.push(location.state?.from||'/home');
+        history.push(locations.state?.from||'/home');
         setError('');
       })
       .catch(error => {
@@ -73,13 +74,15 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
-        history.push(location.state?.from||'/home');
+        history.push(locations.state?.from||'/home');
         setError('');
         verifyEmail();
         setUserName();
+        window.location.reload();
         setName('');
         setEmail('');
         setPassword('')
+        
       })
       .catch(error => {
         setError(error.message);
@@ -93,12 +96,12 @@ const Login = () => {
       })
   }
   const history= useHistory();
-  const location= useLocation();
+  const locations= useLocation();
 
   const handleGoogleLogIn = () =>{
     signInUsingGoogle()
     .then(result =>{
-      history.push(location.state?.from||'/home');
+      history.push(locations.state?.from||'/home');
     })
   }
 
